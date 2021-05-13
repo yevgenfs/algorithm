@@ -37,5 +37,9 @@ int main(void)
 	
 	display(head);
 	
+	free(head);
+	free(second);
+	free(third);
+	
 	return 0;
 }
