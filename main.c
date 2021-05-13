@@ -61,5 +61,10 @@ int main(void)
 	printf("pre_order\n");
 	pre_order(root);
 	
+	free(root->left->left);
+	free(root->left);
+	free(root->right);
+	free(root);
+	
 	return 0;
 }
