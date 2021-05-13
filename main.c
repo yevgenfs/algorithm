@@ -17,9 +17,11 @@ struct node* create(int32_t data)
 	node->left = NULL;
 	node->right = NULL;
 	
-	return(node);
+	return(node); // return pointer to the new node
 }
 
+// Recursively displays value of the nodes in the order. First display all left nodes after that display root node 
+// and in the and display all right nodes
 void in_order(struct node* node)
 {
 	if(node == NULL)
@@ -29,6 +31,8 @@ void in_order(struct node* node)
 	in_order(node->right);
 }
 
+// create new node and insert in BST if data less than root node than compare with left node.
+// If more than root node than compare with right node 
 struct node* insert(struct node* node, int32_t data)
 {
 	if(node == NULL)
@@ -44,6 +48,16 @@ struct node* insert(struct node* node, int32_t data)
 	return (node);
 }
 
+// delete all left nodes than all right and in the end delete root nodes
+void delete(struct node* node)
+{
+	if(node == NULL)
+		return 0;
+	delete(node->left);
+	delete(node->right);
+	free(node);
+}
+
 int main(void) 
 {
 	struct node* root = NULL;
@@ -55,6 +69,7 @@ int main(void)
 	insert(root, 60);
 	insert(root, 80);
 	in_order(root);
+	delete(root);
 	
 	return 0;
 }
