@@ -49,6 +49,19 @@ int32_t peak(struct Stack* stack)
 	return stack->arr[stack->top];
 }
 
+void delete(struct Stack* stack)
+{
+	if(is_empty(stack))
+	{
+		free(stack);
+		printf("successfully delete");
+	}
+	else
+	{
+		printf("error pop all items from the stack \n");
+	}	
+}
+
 int main(void) 
 {
 	struct Stack* stack = create(100);
@@ -59,6 +72,12 @@ int main(void)
 	
 	printf("%d popped \n",pop(stack));
 	printf("%d popped \n",pop(stack));
+
+	delete(stack);
+
+	printf("%d popped \n",pop(stack));
+
+	delete(stack);
 	
 	return 0;
 }
