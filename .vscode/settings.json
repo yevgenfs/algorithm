@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "stack.h": "c",
+        "atomic": "c",
+        "*.tcc": "c",
+        "type_traits": "c",
+        "fstream": "c",
+        "functional": "c",
+        "istream": "c",
+        "new": "c",
+        "ostream": "c",
+        "sstream": "c",
+        "system_error": "c",
+        "stdlib.h": "c",
+        "stdint.h": "c"
+    }
+}
