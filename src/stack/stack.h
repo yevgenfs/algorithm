@@ -17,11 +17,8 @@ typedef enum StackErr
   eStackErrOk,
   eStackErrIsFull,
   eStackErrIsEmpty,
-  eStackErrInvalidArgument,
-  eStackErrAllocationError,
-  eStackErrIsNotEmpty
+  eStackErrInvalidArgument
 }e_stack_err_t;
-
 
 stack_t* create(uint32_t u32L_size_of_element, uint16_t u16L_stack_size);
 bool is_full(stack_t* objPL_stack);

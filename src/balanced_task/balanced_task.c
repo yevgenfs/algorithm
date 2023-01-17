@@ -17,15 +17,18 @@ void balanced_task_run(void)
   scanf("%d", &u8L_number_of_elements);
   printf("%d\n", u8L_number_of_elements);
   char* cL_string = malloc(sizeof(char) * u8L_number_of_elements);
-  printf("Enter string\n");
-  getchar();
-  scanf("%[^\n]s",cL_string);
-  printf("%s\n", cL_string);
+  if (cL_string != NULL)
+  {
+    printf("Enter string\n");
+    getchar();
+    scanf("%[^\n]s",cL_string);
+    printf("%s\n", cL_string);
 
-  if (balanced_string_verified(cL_string, u8L_number_of_elements, &u8L_num_of_valid_elements))
-    (is_string_balanced(cL_string, u8L_num_of_valid_elements)) ? printf("String is balanced\n") : printf("String is not balanced\n");
+    if (balanced_string_verified(cL_string, u8L_number_of_elements, &u8L_num_of_valid_elements))
+      (is_string_balanced(cL_string, u8L_num_of_valid_elements)) ? printf("String is balanced\n") : printf("String is not balanced\n");
 
-  free(cL_string);
+    free(cL_string);
+  }
 }
 
 static bool balanced_string_verified (char* cPL_string, uint8_t u8L_num_of_elements, uint8_t* u8L_num_of_valid_elements)

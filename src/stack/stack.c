@@ -71,12 +71,6 @@ e_stack_err_t delete_stack(stack_t* objPL_stack)
 {
   if (objPL_stack == NULL)
    return eStackErrInvalidArgument;
-
-	if(!is_empty(objPL_stack))
-  {
-    printf("error pop all items from the stack \n");
-		return eStackErrIsNotEmpty;
-  }
  
 	free(objPL_stack);
 	printf("successfully delete\n");
@@ -96,10 +90,6 @@ void stack_demo(void)
 
   pop(objPL_stack, &u32L_element);
   printf("%d popped \n", u32L_element);
-  pop(objPL_stack, &u32L_element);
-  printf("%d popped \n", u32L_element);
-
-  delete_stack(objPL_stack);
   pop(objPL_stack, &u32L_element);
   printf("%d popped \n", u32L_element);
 
